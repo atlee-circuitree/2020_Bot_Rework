@@ -7,24 +7,33 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.InstantCommand;
+import frc.robot.Robot;
+import frc.robot.subsystems.climbPnumaticSubsystem;
 
 /**
  * Add your docs here.
  */
-public class climbupPnumaticCommand extends InstantCommand {
+public class climbPnumaticCommand extends InstantCommand {
   /**
    * Add your docs here.
    */
-  public climbupPnumaticCommand() {
+  public climbPnumaticCommand() {
     super();
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.m_climbPnumaticSubsystem);
+
   }
 
   // Called once when the command executes
-  @Override
+  private void requires(Command m_climbPnumaticSubsystem) {
+  }
+
+@Override
   protected void initialize() {
+
+    Robot.climbPnumaticCommand.climbUp();
+    
   }
 
 }
