@@ -8,9 +8,15 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.drive.driveRobot;
+import frc.robot.Robot;
+import frc.robot.subsystems.drivetrainSubsystem;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 
 public class drivetrainCommand extends Command {
   public drivetrainCommand() {
+
+    requires(Robot.m_subsystem);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -23,6 +29,7 @@ public class drivetrainCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    ((driveRobot) Robot.driveRobot).driveArcade(Robot.m_oi.driver.getY(Hand.kLeft),Robot.m_oi.driver.getX(Hand.kRight));
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -34,6 +41,7 @@ public class drivetrainCommand extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    ((driveRobot) Robot.driveRobot).driveArcade(0, 0);
   }
 
   // Called when another command which requires one or more of the same
