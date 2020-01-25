@@ -29,5 +29,24 @@ public class RobotMap {
   public static int driveFrontrightMotor = 1;
   public static int driveRearleftMotor = 2;
   public static int driveRearrightMotor = 3;
+
+  public static int conveyorbeltFrontrightMotor = 4;
+  public static int conveyorbeltFrontleftMotor = 5;
+  public static int conveyorbeltBackrightMotor = 6;
+  public static int conveyorbeltBackleftMotor = 7;
+
+  public static int shooterrightMotor = 8;
+  public static int shooterleftMotor = 9;
+
+  public static int ElevatorMotor = 10;
+  
+  public static int intakeMotor = 11;
+
+  public static int colorwheelmotor = 12;
+
+  public static int barmotor = 13;
+
+
+
    
 }
