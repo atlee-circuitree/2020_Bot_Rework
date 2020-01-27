@@ -8,6 +8,11 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.commands.climbupPnumaticCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -43,5 +48,15 @@ public class OI {
   // button.whenReleased(new ExampleCommand());
 
   public Joystick driver = new Joystick(0);
+  public XboxController Xstick = new XboxController(1);
+
+  Button D1 = new JoystickButton(driver, 1);
+  Button D2 = new JoystickButton(driver, 2);
+
+  public OI() {
+
+    D2.toggleWhenPressed(new climbupPnumaticCommand());
+
+  }
 
 }

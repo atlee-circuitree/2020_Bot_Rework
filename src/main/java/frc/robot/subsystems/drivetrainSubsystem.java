@@ -5,6 +5,8 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+//All the drivetrain code was taken from https://www.instructables.com/id/2019-FRC-Writing-a-Simple-Drive-Train-Java/
+
 package frc.robot.subsystems;
 
 //Default Imports
@@ -12,14 +14,14 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
-import java.sql.Driver;
+//import java.sql.Driver;
 
 //Spark Imports
 
 import com.revrobotics.CANSparkMax;
 //import com.revrobotics.SparkMax;
 //import edu.wpi.first.wpilibj.Spark;
-import com.revrobotics.CANSparkMaxLowLevel;
+//import com.revrobotics.CANSparkMaxLowLevel;
 
 public class drivetrainSubsystem extends Subsystem {
 
@@ -28,13 +30,17 @@ public class drivetrainSubsystem extends Subsystem {
 
   public drivetrainSubsystem() {
 
+    // Reasigns the motor values
+
     fl = new CANSparkMax(RobotMap.driveFrontleftMotor, null);
     fr = new CANSparkMax(RobotMap.driveFrontrightMotor, null);
     rl = new CANSparkMax(RobotMap.driveRearleftMotor, null);
     rr = new CANSparkMax(RobotMap.driveRearrightMotor, null);
 
+    // Makes the left motors inverted 
+
     fl.setInverted(true);
-    fr.setInverted(true);
+    rl.setInverted(true);
 
     
 

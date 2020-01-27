@@ -25,9 +25,18 @@ package frc.robot;
  */
 public class RobotMap {
 
+  // Map all the motors / pnumatics here
+
   public static int driveFrontleftMotor = 0;
   public static int driveFrontrightMotor = 1;
   public static int driveRearleftMotor = 2;
   public static int driveRearrightMotor = 3;
+
+  // Solenoids
+
+  public static final int leftClimbPnumatic_Deploy = 0;
+  public static final int leftClimbPnumatic_Retract = 1;
+  public static final int rightClimbPnumatic_Deploy = 0;
+  public static final int rightClimbPnumatic_Retract = 1;
    
 }

@@ -3,10 +3,11 @@ package frc.robot.drive;
 //import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 //import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.revrobotics.CANSparkMax;
-import com.revrobotics.ControlType;
+//import com.revrobotics.ControlType;
 
-import frc.robot.subsystems.drivetrainSubsystem;
+//import frc.robot.subsystems.drivetrainSubsystem;
 
+//All the drivetrain code was taken from https://www.instructables.com/id/2019-FRC-Writing-a-Simple-Drive-Train-Java/
 
 public final class driveRobot {
     // TODO - Add mecanum drive, holonomic drive

@@ -5,6 +5,8 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+// This code is using the old command-based template
+
 package frc.robot;
 
 // Default Imports
@@ -12,14 +14,16 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.drivetrainSubsystem;
 
 //Canvas Imports
 
-import com.revrobotics.SparkMax;
+//import com.revrobotics.SparkMax;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -29,9 +33,11 @@ import com.revrobotics.SparkMax;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
+  //public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
+  public static drivetrainSubsystem m_subsystem = new drivetrainSubsystem();
   public static OI m_oi;
 public static Object driveRobot;
+public static Command m_climbPnumaticSubsystem;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
