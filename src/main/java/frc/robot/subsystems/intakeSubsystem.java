@@ -5,22 +5,22 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+
 package frc.robot.subsystems;
 import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 
 
 public class intakeSubsystem extends Subsystem {
 
-  private static final int DeviceID = ;
-  private CANSparkMax m_Motor;
+ CANSparkMax intake;
 
   public intakeSubsystem() {
 
-m_Motor = new CANSparkMax(DeviceID, MotorType.kBrushless);
-
+  intake = new CANSparkMax(RobotMap.intakeMotor, null);
 }
+
 
   @Override
   public void initDefaultCommand() {

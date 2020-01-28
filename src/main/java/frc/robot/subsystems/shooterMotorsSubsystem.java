@@ -12,22 +12,23 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import com.revrobotics.CANDigitalInput;
+import com.revrobotics.CANEncoder;
+import com.revrobotics.EncoderType;
+import frc.robot.RobotMap;
 
 
   public class shooterMotorsSubsystem extends Subsystem{
   
-  private static final int leftDeviceID = ; //Need to assign Device ID at a later date
-  private static final int rightDeviceID = ;
-  private CANSparkMax m_leftMotor;
-  private CANSparkMax m_rightMotor;
+  CANSparkMax lmr, rm;
   private CANDigitalInput m_forwardLimit;
   private CANDigitalInput m_reverseLimit;
- 
+  private CANEncoder m_leftencoder;
+  private CANEncoder m_rightencoder;
 
  public shooterMotorsSubsystem() 
   {      
-    m_leftMotor = new CANSparkMax(leftDeviceID, MotorType.kBrushless);
-    m_rightMotor = new CANSparkMax(rightDeviceID, MotorType.kBrushless);
+    lmr = new CANSparkMax(RobotMap.shooterleftMotor, null);
+    rm = new CANSparkMax(RobotMap.shooterrightMotor, null);
   }
 @Override
     public void periodic() {
@@ -39,7 +40,6 @@ import com.revrobotics.CANDigitalInput;
       SmartDashboard.putBoolean("Reverse Limit Switch", m_reverseLimit.get());
 
     }
-
   @Override
   protected void initDefaultCommand() {
     // TODO Auto-generated method stub

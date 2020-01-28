@@ -9,17 +9,18 @@ package frc.robot.subsystems;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 
 public class colorwheelSubsystem extends Subsystem {
- 
-private static final int DeviceID = ;
-private CANSparkMax m_Motor;
+
+  CANSparkMax colorwheel;
 
 public colorwheelSubsystem() {
 
-  m_Motor = new CANSparkMax(DeviceID, MotorType.kBrushless);  
+  colorwheel = new CANSparkMax(RobotMap.colorwheelmotor, null);  
 
 }
+
 
 
   @Override

@@ -8,18 +8,18 @@
 package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
+
 
 public class ElevatorSubsystem extends Subsystem {
 
-  private static final int DeviceID = ;
-  private CANSparkMax m_Motor;
+  CANSparkMax elevator;
  
 
   public ElevatorSubsystem() {
 
-    m_Motor = new CANSparkMax(DeviceID, MotorType.kBrushless);
+    elevator = new CANSparkMax(RobotMap.ElevatorMotor, null);
 
   }
 
