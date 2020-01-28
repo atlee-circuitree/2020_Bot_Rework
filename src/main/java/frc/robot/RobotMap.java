@@ -32,18 +32,15 @@ public class RobotMap {
   public static int driveRearleftMotor = 2;
   public static int driveRearrightMotor = 3;
 
-<<<<<<< HEAD
   // Solenoids
 
   public static final int leftClimbPnumatic_Deploy = 0;
   public static final int leftClimbPnumatic_Retract = 1;
   public static final int rightClimbPnumatic_Deploy = 0;
   public static final int rightClimbPnumatic_Retract = 1;
-=======
-  public static int conveyorbeltFrontrightMotor = 4;
-  public static int conveyorbeltFrontleftMotor = 5;
-  public static int conveyorbeltBackrightMotor = 6;
-  public static int conveyorbeltBackleftMotor = 7;
+
+  public static int conveyorbeltrightMotor = 4;
+  public static int conveyorbeltleftMotor = 5;
 
   public static int shooterrightMotor = 8;
   public static int shooterleftMotor = 9;
@@ -58,6 +55,5 @@ public class RobotMap {
 
 
 
->>>>>>> 5b116b9602670a535a690d522534a4f69dc47437
    
 }

@@ -11,37 +11,42 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import com.revrobotics.CANDigitalInput;
+import frc.robot.RobotMap;
 
-public class conveyorbeltdownSubsystem extends Subsystem {
 
-  private static final int leftDeviceID = ; //Need to assign Device ID at a later date
-  private static final int rightDeviceID = ;
-  private CANSparkMax m_leftMotor;
-  private CANSparkMax m_rightMotor;
-  private CANDigitalInput m_forwardLimit;
-  private CANDigitalInput m_reverseLimit;
+public class conveyorbeltSubsystem extends Subsystem {
 
- public conveyorbeltdownSubsystem() {
+
+  private CANSparkMax leftmotor = null;
+  private CANSparkMax rightmotor = null;
+
+ public conveyorbeltSubsystem() {
     
- m_leftMotor = new CANSparkMax(leftDeviceID, MotorType.kBrushless);
- m_rightMotor = new CANSparkMax(rightDeviceID, MotorType.kBrushless); 
+ leftmotor = new CANSparkMax(RobotMap.conveyorbeltleftMotor, null);
+ rightmotor = new CANSparkMax(RobotMap.conveyorbeltrightMotor, null); 
 
   }
 
-  public void periodic() {
+  public void conveyorbeltup() {
+
+    leftmotor.set(1);
+    rightmotor.set(-1);
   
-    m_forwardLimit.enableLimitSwitch(SmartDashboard.getBoolean("Forward Limit Enabled", false));
-    m_reverseLimit.enableLimitSwitch(SmartDashboard.getBoolean("Reverse Limit Enabled", false));  
-    
-    SmartDashboard.putBoolean("Forward Limit Switch", m_forwardLimit.get());
-    SmartDashboard.putBoolean("Reverse Limit Switch", m_reverseLimit.get());
-   
   }
 
-  @Override
-  protected void initDefaultCommand() {
-    // TODO Auto-generated method stub
+  public void conveyorbeltdown() {
 
+    leftmotor.set(-1);
+    rightmotor.set(1);
+
+  }
+
+  public void conveyorbeltstop() {
+
+    leftmotor.set(0);
+    rightmotor.set(0);
+}
+  @Override
+  public void initDefaultCommand() {
   }
 }

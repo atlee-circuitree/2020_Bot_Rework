@@ -7,18 +7,23 @@
 
 package frc.robot.subsystems;
 import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
 public class colorwheelSubsystem extends Subsystem {
 
-  CANSparkMax colorwheel;
+  CANSparkMax colorwheel = null;
 
 public colorwheelSubsystem() {
 
   colorwheel = new CANSparkMax(RobotMap.colorwheelmotor, null);  
 
+}
+
+public void spinwheel() {
+
+  colorwheel.set(1);
+  
 }
 
 
