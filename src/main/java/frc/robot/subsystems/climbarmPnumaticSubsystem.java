@@ -5,31 +5,20 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.subsystems;
 
-//import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.InstantCommand;
-//import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.Robot;
-import frc.robot.RobotMap;
-//import frc.robot.subsystems.climbPnumaticSubsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
-//import frc.robot.subsystems.*;
+import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
+
+// Code taken from file:///C:/FRC_Code/Tutorials%20and%20other%20junk%20files/FRC%20Programming%20Tutorial%20VSC.pdf
 
 /**
  * Add your docs here.
  */
-public class climbdownPnumaticCommand extends InstantCommand {
-  /**
-   * Add your docs here.
-   */
-  public climbdownPnumaticCommand() {
-    super();
-    requires(Robot.m_climbPnumaticSubsystem);
-    climber();
-  }
-
+public class climbPnumaticSubsystem extends Subsystem {
+   
   DoubleSolenoid leftClimbPnumatic = null;
   DoubleSolenoid rightClimbPnumatic = null;
 
@@ -45,8 +34,8 @@ public class climbdownPnumaticCommand extends InstantCommand {
     leftClimbPnumatic.set(Value.kForward);
     rightClimbPnumatic.set(Value.kForward);
 
-
   }
+
   public void climbDown() {
 
     leftClimbPnumatic.set(Value.kReverse);
@@ -55,10 +44,8 @@ public class climbdownPnumaticCommand extends InstantCommand {
   }
 
   @Override
-  public void initialize() {
-
-    climbUp();
-    
+  public void initDefaultCommand() {
+    // Set the default command for a subsystem here.
+    // setDefaultCommand(new MySpecialCommand());
   }
-
 }
