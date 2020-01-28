@@ -11,8 +11,14 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.commands.climbArmdownPnumaticCommand;
+import frc.robot.commands.climbArmupPnumaticCommand;
+//import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.commands.climbdownPnumaticCommand;
 import frc.robot.commands.climbupPnumaticCommand;
+import frc.robot.commands.closeShooterPnumaticCommand;
+import frc.robot.commands.kickoutRobotPnumaticCommand;
+import frc.robot.commands.openShooterPnumaticCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -48,14 +54,27 @@ public class OI {
   // button.whenReleased(new ExampleCommand());
 
   public Joystick driver = new Joystick(0);
-  public XboxController Xstick = new XboxController(1);
+  public XboxController XOne = new XboxController(1);
 
   Button D1 = new JoystickButton(driver, 1);
   Button D2 = new JoystickButton(driver, 2);
+  Button D3 = new JoystickButton(driver, 3);
+  Button D4 = new JoystickButton(driver, 4);
+  Button D5 = new JoystickButton(driver, 5);
+  Button D6 = new JoystickButton(driver, 6);
+  Button X1 = new JoystickButton(XOne, 1);
+  Button X2 = new JoystickButton(XOne, 2);
+  Button X3 = new JoystickButton(XOne, 3);
 
   public OI() {
 
+    D4.toggleWhenPressed(new climbdownPnumaticCommand());
     D2.toggleWhenPressed(new climbupPnumaticCommand());
+    X1.toggleWhenPressed(new openShooterPnumaticCommand());
+    X2.toggleWhenPressed(new closeShooterPnumaticCommand());
+    D3.toggleWhenPressed(new climbArmupPnumaticCommand());
+    D5.toggleWhenPressed(new climbArmdownPnumaticCommand());
+    D1.toggleWhenPressed(new kickoutRobotPnumaticCommand());
 
   }
 
