@@ -12,11 +12,23 @@ import frc.robot.RobotMap;
 
 public class barmanipulantSubsystem extends Subsystem {
 
-  CANSparkMax bar;
+  CANSparkMax bar = null;
 
 public barmanipulantSubsystem() {
 
   bar = new CANSparkMax(RobotMap.barmotor, null);
+  
+}
+
+public void moveright() {
+
+  bar.set(1);
+
+}
+
+public void moveleft() {
+
+  bar.set(-1);
   
 }
   @Override

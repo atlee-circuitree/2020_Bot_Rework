@@ -14,7 +14,7 @@ import frc.robot.RobotMap;
 
 public class ElevatorSubsystem extends Subsystem {
 
-  CANSparkMax elevator;
+  CANSparkMax elevator = null;
  
 
   public ElevatorSubsystem() {
@@ -23,14 +23,19 @@ public class ElevatorSubsystem extends Subsystem {
 
   }
 
-  @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
+  public void raiseshooter() {
+
+  elevator.set(1);
+
   }
 
+  public void lowershooter() {
+
+  elevator.set(-1);
+
+  }
   @Override
   protected void initDefaultCommand() {
-    // TODO Auto-generated method stub
 
   }
 }

@@ -14,13 +14,24 @@ import frc.robot.RobotMap;
 
 public class intakeSubsystem extends Subsystem {
 
- CANSparkMax intake;
+ CANSparkMax intake = null;
 
   public intakeSubsystem() {
 
   intake = new CANSparkMax(RobotMap.intakeMotor, null);
 }
 
+public void takeinballs() {
+
+  intake.set(1);
+
+}
+
+public void spitoutballs() {
+
+  intake.set(-1);
+  
+}
 
   @Override
   public void initDefaultCommand() {

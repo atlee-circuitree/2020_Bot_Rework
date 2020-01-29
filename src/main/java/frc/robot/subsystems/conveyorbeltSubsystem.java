@@ -9,38 +9,43 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.RobotMap;
-import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.commands.shootMotorsCommand;
 
 
-
-  public class shooterMotorsSubsystem extends Subsystem{
-  
-  CANSparkMax leftmotorshooter = null;
-  CANSparkMax rightmotorshooter = null;
+public class conveyorbeltSubsystem extends Subsystem {
 
 
- public void shooter() 
-  {      
-    leftmotorshooter = new CANSparkMax(RobotMap.shooterleftMotor, null);
-    rightmotorshooter = new CANSparkMax(RobotMap.shooterrightMotor, null);
+  private CANSparkMax leftmotor = null;
+  private CANSparkMax rightmotor = null;
+
+ public conveyorbeltSubsystem() {
+    
+ leftmotor = new CANSparkMax(RobotMap.conveyorbeltleftMotor, null);
+ rightmotor = new CANSparkMax(RobotMap.conveyorbeltrightMotor, null); 
+
   }
 
-  public void motorsfire() {
+  public void conveyorbeltup() {
 
-    leftmotorshooter.set(-1);
-    rightmotorshooter.set(1);
+    leftmotor.set(1);
+    rightmotor.set(-1);
   
   }
 
-  public void motorsStop() {
+  public void conveyorbeltdown() {
 
-    leftmotorshooter.set(0);
-    rightmotorshooter.set(0);
+    leftmotor.set(-1);
+    rightmotor.set(1);
 
   }
 
+  public void conveyorbeltstop() {
+
+    leftmotor.set(0);
+    rightmotor.set(0);
+}
   @Override
   public void initDefaultCommand() {
   }
