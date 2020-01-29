@@ -58,6 +58,7 @@ public class OI {
 
   Button D1 = new JoystickButton(driver, 1);
   Button D2 = new JoystickButton(driver, 2);
+<<<<<<< HEAD
   Button D3 = new JoystickButton(driver, 3);
   Button D4 = new JoystickButton(driver, 4);
   Button D5 = new JoystickButton(driver, 5);
@@ -66,6 +67,9 @@ public class OI {
   Button X2 = new JoystickButton(XOne, 2);
   Button X3 = new JoystickButton(XOne, 3);
 
+=======
+  
+>>>>>>> 0e4536bdcf1cbd280950927efa3c8199e3acbb57
   public OI() {
 
     D4.toggleWhenPressed(new climbdownPnumaticCommand());
