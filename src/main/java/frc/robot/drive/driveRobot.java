@@ -54,27 +54,20 @@ public final class driveRobot {
     // This method is used for driving arcade style
 
     public void driveArcade(double moveValue, double rotateValue) {
-        double leftMotorSpeed;
-        double rightMotorSpeed;
-
         moveValue = limitValue(moveValue);
         rotateValue = limitValue(rotateValue);
 
         if (moveValue >= 0.0) {
             if (rotateValue >= 0.0) {
-                leftMotorSpeed = moveValue - rotateValue;
-                rightMotorSpeed = Math.max(moveValue, rotateValue);
+                Math.max(moveValue, rotateValue);
             } else {
-                leftMotorSpeed = Math.max(moveValue, -rotateValue);
-                rightMotorSpeed = moveValue + rotateValue;
+                Math.max(moveValue, -rotateValue);
             }
         } else {
             if (rotateValue >= 0.0) {
-                leftMotorSpeed = -Math.max(-moveValue, rotateValue);
-                rightMotorSpeed = moveValue + rotateValue;
+                Math.max(-moveValue, rotateValue);
             } else {
-                leftMotorSpeed = moveValue - rotateValue;
-                rightMotorSpeed = -Math.max(-moveValue, -rotateValue);
+                Math.max(-moveValue, -rotateValue);
             }
         }
         // setMotorOutputs(-rightMotorSpeed, -leftMotorSpeed);

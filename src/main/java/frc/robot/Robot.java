@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
-import frc.robot.subsystems.ExampleSubsystem;
+//import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.drivetrainSubsystem;
 
 //Canvas Imports
@@ -37,7 +37,7 @@ public class Robot extends TimedRobot {
   public static drivetrainSubsystem m_subsystem = new drivetrainSubsystem();
   public static OI m_oi;
 public static Object driveRobot;
-public static Command m_climbPnumaticSubsystem;
+public static Subsystem m_climbPnumaticSubsystem;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -141,4 +141,6 @@ public static Command m_climbPnumaticSubsystem;
   @Override
   public void testPeriodic() {
   }
+
+
 }

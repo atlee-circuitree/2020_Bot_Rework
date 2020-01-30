@@ -57,7 +57,7 @@ public class climbdownPnumaticCommand extends InstantCommand {
   @Override
   public void initialize() {
 
-    climbUp();
+    climbDown();
     
   }
 

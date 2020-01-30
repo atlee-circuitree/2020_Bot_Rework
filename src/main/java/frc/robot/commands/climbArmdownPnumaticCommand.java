@@ -7,32 +7,57 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+//import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.InstantCommand;
+//import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.Robot;
-import frc.robot.subsystems.climbPnumaticSubsystem;
+import frc.robot.RobotMap;
+//import frc.robot.subsystems.climbPnumaticSubsystem;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+//import frc.robot.subsystems.*;
 
 /**
  * Add your docs here.
  */
-public class climbPnumaticCommand extends InstantCommand {
+public class climbArmdownPnumaticCommand extends InstantCommand {
   /**
    * Add your docs here.
    */
-  public climbPnumaticCommand() {
+  public climbArmdownPnumaticCommand() {
     super();
     requires(Robot.m_climbPnumaticSubsystem);
+    armClimber();
+  }
+
+  DoubleSolenoid leftClimbArmPnumatic = null;
+  DoubleSolenoid rightClimbArmPnumatic = null;
+
+  public void armClimber() {
+
+    leftClimbArmPnumatic = new DoubleSolenoid(RobotMap.leftClimbPnumatic_Deploy, RobotMap.leftClimbPnumatic_Retract);
+    rightClimbArmPnumatic = new DoubleSolenoid(RobotMap.rightClimbPnumatic_Deploy, RobotMap.rightClimbPnumatic_Retract);
 
   }
 
-  // Called once when the command executes
-  private void requires(Command m_climbPnumaticSubsystem) {
+  public void climbArmUp() {
+
+    leftClimbArmPnumatic.set(Value.kForward);
+    rightClimbArmPnumatic.set(Value.kForward);
+
+
+  }
+  public void climbArmDown() {
+
+    leftClimbArmPnumatic.set(Value.kReverse);
+    rightClimbArmPnumatic.set(Value.kReverse);
+
   }
 
-@Override
-  protected void initialize() {
+  @Override
+  public void initialize() {
 
-    Robot.climbPnumaticCommand.climbUp();
+    climbArmDown();
     
   }
 

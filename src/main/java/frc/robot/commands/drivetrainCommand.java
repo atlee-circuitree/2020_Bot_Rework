@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.GenericHID.Hand;
 public class drivetrainCommand extends Command {
   public drivetrainCommand() {
 
-    requires(Robot.m_Subsystem);
+    requires(Robot.m_subsystem);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }

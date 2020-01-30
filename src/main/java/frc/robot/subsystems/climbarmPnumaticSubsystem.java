@@ -17,29 +17,29 @@ import frc.robot.RobotMap;
 /**
  * Add your docs here.
  */
-public class climbPnumaticSubsystem extends Subsystem {
+public class climbarmPnumaticSubsystem extends Subsystem {
    
-  DoubleSolenoid leftClimbPnumatic = null;
-  DoubleSolenoid rightClimbPnumatic = null;
+  DoubleSolenoid leftarmClimbPnumatic = null;
+  DoubleSolenoid rightarmClimbPnumatic = null;
 
-  public void climber() {
+  public void armClimber() {
 
-    leftClimbPnumatic = new DoubleSolenoid(RobotMap.leftClimbPnumatic_Deploy, RobotMap.leftClimbPnumatic_Retract);
-    rightClimbPnumatic = new DoubleSolenoid(RobotMap.rightClimbPnumatic_Deploy, RobotMap.rightClimbPnumatic_Retract);
-
-  }
-
-  public void climbUp() {
-
-    leftClimbPnumatic.set(Value.kForward);
-    rightClimbPnumatic.set(Value.kForward);
+    leftarmClimbPnumatic = new DoubleSolenoid(RobotMap.leftClimbPnumatic_Deploy, RobotMap.leftClimbPnumatic_Retract);
+    rightarmClimbPnumatic = new DoubleSolenoid(RobotMap.rightClimbPnumatic_Deploy, RobotMap.rightClimbPnumatic_Retract);
 
   }
 
-  public void climbDown() {
+  public void armClimbUp() {
 
-    leftClimbPnumatic.set(Value.kReverse);
-    rightClimbPnumatic.set(Value.kReverse);
+    leftarmClimbPnumatic.set(Value.kForward);
+    rightarmClimbPnumatic.set(Value.kForward);
+
+  }
+
+  public void armClimbDown() {
+
+    leftarmClimbPnumatic.set(Value.kReverse);
+    rightarmClimbPnumatic.set(Value.kReverse);
 
   }
 
