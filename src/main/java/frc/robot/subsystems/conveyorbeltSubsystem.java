@@ -22,8 +22,8 @@ public class conveyorbeltSubsystem extends Subsystem {
 
  public conveyorbeltSubsystem() {
     
- leftmotor = new CANSparkMax(RobotMap.conveyorbeltleftMotor, null);
- rightmotor = new CANSparkMax(RobotMap.conveyorbeltrightMotor, null); 
+ leftmotor = new CANSparkMax(RobotMap.conveyorbeltBackleftMotor, null);
+ rightmotor = new CANSparkMax(RobotMap. conveyorbeltBackrightMotor, null);
 
   }
 

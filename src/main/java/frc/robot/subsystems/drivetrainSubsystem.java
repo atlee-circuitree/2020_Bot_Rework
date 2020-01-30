@@ -30,7 +30,7 @@ public class drivetrainSubsystem extends Subsystem {
 
   public drivetrainSubsystem() {
 
-    // Reasigns the motor values
+    // Reassigns the motor values
 
     fl = new CANSparkMax(RobotMap.driveFrontleftMotor, null);
     fr = new CANSparkMax(RobotMap.driveFrontrightMotor, null);
