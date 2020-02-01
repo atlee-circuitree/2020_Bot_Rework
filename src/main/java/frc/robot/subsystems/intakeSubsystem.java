@@ -5,37 +5,41 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-
 package frc.robot.subsystems;
+
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-
+import frc.robot.Constants;
 
 public class intakeSubsystem extends Subsystem {
 
- CANSparkMax intake = null;
+  ublic static CANSparkMax intakeMotor = new CANSparkMax(Constants.intakeMotorPort, MotorType.kBrushless);
 
   public intakeSubsystem() {
 
-  intake = new CANSparkMax(RobotMap.intakeMotor, null);
 }
 
 public void takeinballs() {
 
-  intake.set(1);
+  intakeMotor.set(1);
 
 }
 
 public void spitoutballs() {
 
-  intake.set(-1);
+  intakeMotor.set(-1);
   
 }
 
-  @Override
-  public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
-  }
+public void setIntakeSpeed(){
+  intakeMotor.set(Constants.intakeSpeed);
+}
+
+@Override
+public void periodic() {
+  // This method will be called once per scheduler run
+}
 }

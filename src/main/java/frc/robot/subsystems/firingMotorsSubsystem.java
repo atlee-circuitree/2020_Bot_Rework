@@ -6,23 +6,24 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.subsystems;
+package frc.robot.subsystems;
+
 import com.revrobotics.CANSparkMax;
-import frc.robot.commands.shootMotorsCommand;
-import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.RobotMap;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj2.command.Subsystem;
+import frc.robot.Constants;
+import frc.robot.RobotContainer;
 
-
-  public class shooterMotorsSubsystem extends Subsystem{
+public class firingMotorsSubsystem extends Subsystem{
   
-  CANSparkMax leftmotorshooter = null;
-  CANSparkMax rightmotorshooter = null;
-
-
- public void shooter() 
+  public static CANSparkMax leftmotorshooter = new CANSparkMax(Constants. rightmotorshooterMotorPort);
+  public static CANSparkMax rightmotorshooter = new CANSparkMax(Constants. leftmotorshooterPort);
+ 
+  public void shooter() 
   {      
-    leftmotorshooter = new CANSparkMax(RobotMap.shooterleftMotor, null);
-    rightmotorshooter = new CANSparkMax(RobotMap.shooterrightMotor, null);
+    
   }
 
   public void motorsfire() {
@@ -40,8 +41,12 @@ import frc.robot.RobotMap;
   }
 
   @Override
-  public void initDefaultCommand() {
+  public void periodic() {
 
-    
+  }
+  
+  public void setConveyorBeltSpeed(){
+    leftmotorshooter.set(Constants.conveyorBeltSpeed);
+    rightmotorshooter.set(Constants.conveyorBeltSpeed);
   }
 }
