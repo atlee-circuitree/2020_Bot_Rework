@@ -29,35 +29,11 @@ public class climbupPnumaticCommand extends InstantCommand {
     requires(Robot.m_climbPnumaticSubsystem);
     climber();
   }
-
-  DoubleSolenoid leftClimbPnumatic = null;
-  DoubleSolenoid rightClimbPnumatic = null;
-
-  public void climber() {
-
-    leftClimbPnumatic = new DoubleSolenoid(RobotMap.leftClimbPnumatic_Deploy, RobotMap.leftClimbPnumatic_Retract);
-    rightClimbPnumatic = new DoubleSolenoid(RobotMap.rightClimbPnumatic_Deploy, RobotMap.rightClimbPnumatic_Retract);
-
-  }
-
-  public void climbUp() {
-
-    leftClimbPnumatic.set(Value.kForward);
-    rightClimbPnumatic.set(Value.kForward);
-
-
-  }
-  public void climbDown() {
-
-    leftClimbPnumatic.set(Value.kReverse);
-    rightClimbPnumatic.set(Value.kReverse);
-
-  }
-
+ 
   @Override
   public void initialize() {
 
-    climbUp();
+    Robot.m_climbPnumaticSubsystem.climbUp();
     
   }
 

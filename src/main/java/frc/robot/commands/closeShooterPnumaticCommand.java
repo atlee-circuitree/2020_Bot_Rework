@@ -11,10 +11,10 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.InstantCommand;
 //import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
-//import frc.robot.subsystems.shooterPnumaticSubsystem;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+//import frc.robot.RobotMap;
+//import frc.robot.subsystems.climbPnumaticSubsystem;
+//import edu.wpi.first.wpilibj.DoubleSolenoid;
+//import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 //import frc.robot.subsystems.*;
 
 /**
@@ -26,33 +26,14 @@ public class closeShooterPnumaticCommand extends InstantCommand {
    */
   public closeShooterPnumaticCommand() {
     super();
-    requires(Robot.m_climbPnumaticSubsystem);
-    shooter();
+    requires(Robot.m_shooterPnumaticSubsystem);
+    Robot.m_shooterPnumaticSubsystem.shooter();
   }
-
-  DoubleSolenoid shooterPnumatic = null;
-
-  public void shooter() {
-
-    shooterPnumatic = new DoubleSolenoid(RobotMap.leftClimbPnumatic_Deploy, RobotMap.leftClimbPnumatic_Retract);
-
-  }
-
-  public void openShooter() {
-
-    shooterPnumatic.set(Value.kForward);
-    
-  }
-  public void closeShooter() {
-
-    shooterPnumatic.set(Value.kReverse);
-
-  }
-
+ 
   @Override
   public void initialize() {
 
-    closeShooter();
+    Robot.m_shooterPnumaticSubsystem.closeShooter();
     
   }
 
