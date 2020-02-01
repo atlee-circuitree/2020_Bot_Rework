@@ -19,6 +19,7 @@ import frc.robot.commands.climbupPnumaticCommand;
 import frc.robot.commands.closeShooterPnumaticCommand;
 import frc.robot.commands.kickoutRobotPnumaticCommand;
 import frc.robot.commands.openShooterPnumaticCommand;
+import frc.robot.commands.stopshootMotorsCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -65,6 +66,7 @@ public class OI {
   Button X1 = new JoystickButton(XOne, 1);
   Button X2 = new JoystickButton(XOne, 2);
   Button X3 = new JoystickButton(XOne, 3);
+  Button X4 = new JoystickButton(XOne, 4);
 
   
   public OI() {
@@ -76,6 +78,9 @@ public class OI {
     D3.toggleWhenPressed(new climbArmupPnumaticCommand());
     D5.toggleWhenPressed(new climbArmdownPnumaticCommand());
     D1.toggleWhenPressed(new kickoutRobotPnumaticCommand());
+    X3.toggleWhenPressed(new shootMotorsCommand());
+    X4.toggleWhenPressed(new stopshootMotorsCommand());
+    
 
   }
 

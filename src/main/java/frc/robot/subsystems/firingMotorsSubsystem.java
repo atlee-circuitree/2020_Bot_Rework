@@ -6,12 +6,10 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.subsystems;
-
-import edu.wpi.first.wpilibj.command.Subsystem;
 import com.revrobotics.CANSparkMax;
-import frc.robot.RobotMap;
-import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.commands.shootMotorsCommand;
+import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 
 
 
@@ -43,5 +41,7 @@ import frc.robot.commands.shootMotorsCommand;
 
   @Override
   public void initDefaultCommand() {
+
+    
   }
 }

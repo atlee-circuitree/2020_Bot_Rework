@@ -8,33 +8,30 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.InstantCommand;
+import frc.robot.Robot;
+import frc.robot.subsystems.shooterMotorsSubsystem;
 
 public class shootMotorsCommand extends Command {
   public shootMotorsCommand() {
+ requires(Robot.m_shooterMotorsSubsystem);
 
   }
+
+private void requires(Command shooterMotorsSubsystem){
+}
+  
   @Override
   protected void initialize() {
 
+    Robot.m_shootMotorsCommand.motorsfire();
+    
    }
 
   @Override
-  protected void execute() {
-  }
-
-  @Override
   protected boolean isFinished() {
+    // TODO Auto-generated method stub
     return false;
   }
 
-  // Called once after isFinished returns true
-  @Override
-  protected void end() {
   }
-
-  // Called when another command which requires one or more of the same
-  // subsystems is scheduled to run
-  @Override
-  protected void interrupted() {
-  }
-}
